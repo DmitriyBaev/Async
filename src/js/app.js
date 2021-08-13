@@ -1,6 +1,10 @@
 import GameSavingLoader from './GameSavingLoader';
 
 (async () => {
-  const save = await GameSavingLoader.load();
-  return save;
+  try {
+    const saving = await GameSavingLoader.load();
+    return console.log(saving);
+  } catch (error) {
+    return console.log(error);
+  }
 })();
